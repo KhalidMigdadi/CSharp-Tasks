@@ -26,53 +26,43 @@ namespace Task3
 
         // Q2
 
-        //static void secondSmallest()
-        //{
-            //Console.WriteLine("Write 5 numbers: ");
-        //    int userNumber = Convert.ToInt32(Console.ReadLine());
+        static void secondSmallest()
+        {
+            Console.Write("Enter 5 numebrs to check witch is the samll one\n");
+            int[] numebrs = new int[5];
 
-        //    int[] numbers = new int[userNumber]; // Declare an array of the specified size
-
-        //    int small1 = int.MaxValue;
-        //    int small2 = int.MaxValue;
-
-        //    for (int i = 0; i < userNumber; i++)
-        //    {
-        //        Console.Write($"Element {i + 1}: ");
-        //        numbers[i] = Convert.ToInt32(Console.ReadLine()); // Read and store each element
-        //    }
-
-        //    //string userNumber = Console.ReadLine();
-        //    foreach (int i in numbers)
-        //    {
-        //        if (i < small1)
-        //        {
-        //            small2 = small1;
-        //            small1 = i;
-        //        }
-        //        else if (i < small2 && i != small1)
-        //        {
-        //            small2 = i;
-        //        }
-
-        //    }
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write($"Enter Number {i + 1}: ");
+                int userNumber = int.Parse(Console.ReadLine());
+                numebrs[i] = userNumber;
+            }
+            Array.Sort(numebrs);
+            Console.WriteLine($"The second smallest number is: {numebrs[1]}");
 
 
-        //}
+        }
 
         // Q3
         static void factorial()
         {
-            Console.WriteLine("Enter Number to chek factorial");
-            int userNumber = Convert.ToInt32(Console.Read());
+            Console.Write("Enter Number to check factorial : ");
+            int userNumber = Convert.ToInt32(Console.ReadLine());
             int factorial = 1;
 
-            for (int i = 1; i <= userNumber; i++)
+            //for (int i = 1; i <= userNumber; i++)
+            //{
+
+            //    factorial = factorial * i;
+            //}
+            //Console.WriteLine(factorial);
+
+            for (int i = userNumber; i > 0; i--)
             {
                 factorial *= i;
-
             }
-            Console.WriteLine(userNumber);
+            Console.WriteLine(factorial);
+
         }
 
 
@@ -80,37 +70,64 @@ namespace Task3
 
         static void prime()
         {
-            Console.Write("Enter the first number: ");
-            int start = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter the second number: ");
-            int end = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter 2 Numbers to get all the prime numbers between them");
+            Console.Write("Enter Number 1: ");
+            int start = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Prime numbers between {start} and {end} are:");
+            Console.Write("Enter Number 2 : ");
+            int end = int.Parse(Console.ReadLine());
 
-            for (int num = start; num <= end; num++)
+
+            for (int i = start; i <= end; i++)
             {
                 bool isPrime = true;
-
-
-                if (num < 2)
+                if (i < 2)
+                {
                     isPrime = false;
+                    break;
+                }
                 else
                 {
-                    for (int i = 2; i <= Math.Sqrt(num); i++)
+                    // for loop for the numbers that will i divide the userNumber to
+                    for (int j = 2; j <= start; j++)
                     {
-                        if (num % i == 0)
+                        //if (j % i == 0)
+                        if (i % j == 0)
                         {
                             isPrime = false;
                             break;
                         }
-                    }
-                }
 
+                    }
+
+                }
                 if (isPrime)
-                    Console.Write($"{num} ");
+                    Console.Write($"{i} ");
+
             }
 
+
+            //bool isPrime = true;
+
+            //int x = 25;
+            //for (int i = 2; i < x; i++)
+            //{
+            //    if (x % i == 0)
+            //    {
+            //        isPrime = false;
+            //        Console.Write(" Prime");
+            //        break;
+            //    }
+
+
+            //    if (isPrime)
+            //    {
+            //        Console.Write("Not Prime");
+            //        break;
+            //    }
+
+            //}
 
 
         }
@@ -118,48 +135,22 @@ namespace Task3
 
         // Q5
 
-        //static void largest()
-
-        //{
-        //    Console.WriteLine("Enter Some Numbers to check which is the largest number: ");
-        //    int Numbers = Convert.ToInt32(Console.ReadLine());
-
-        //    int[] numbers = new int[Numbers];
-
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        //Console.Write("element - {0} : ", i);  // Prompt for input element number
-        //        numbers[i] = Convert.ToInt32(Console.ReadLine());  // Read user input and convert it to an integer, then store in the array
-        //    }
-
-        //    Array.Sort(numbers);
-
-
-        //    Console.WriteLine(numbers[numbers.Length-1]);
-
-
-        //}
-
-
         static void largest()
         {
-            Console.WriteLine("Enter the number of elements to check which is the largest number: ");
-            int userNumber = Convert.ToInt32(Console.ReadLine());  // Getting the number of elements
+            Console.WriteLine("How many size of the array u want ?");
+            int n = int.Parse(Console.ReadLine());
 
-            int[] numbers = new int[userNumber];  // Create an array of that size
+            int[] numbers = new int[n];
 
-            // Loop to accept input for each number
-            for (int i = 0; i < userNumber; i++)
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine($"Enter number {i + 1}: ");  // Prompt for input
-                numbers[i] = Convert.ToInt32(Console.ReadLine());  // Read user input and store in the array
+                Console.Write($"Enter Number {i + 1}: ");
+                numbers[i] = int.Parse(Console.ReadLine());
             }
 
-            // Sort the array
             Array.Sort(numbers);
+            Console.WriteLine($"The Largest number is : {numbers[numbers.Length - 1]}");
 
-            // Print the largest number (last element after sorting)
-            Console.WriteLine($"The largest number is: {numbers[numbers.Length - 1]}");
         }
 
 
@@ -167,50 +158,100 @@ namespace Task3
 
         static void pattern()
         {
-            // let x =0;
-            // for(let i = 1; i < 9; i++){
-            //     x = x + i +" " 
-            //     console.log(x); 
-            // }
-            //int x = 0;
-            //for (int i = 1; i < 16; i++)
-            //{
-            //    for (int j = 0; j < 5; j++)
-            //    {
 
-            //    }
-            //}
-
-            //Console.WriteLine("Enter Numbers:");
-            //int n = Convert.ToInt32(Console.ReadLine());
-            //for (int i = 1; i <= n; i++)
-            //{
-            //    Console.Write(new string(' ', n - i));
-            //    Console.WriteLine(new string('*', 2 * i - 1));
-            //}
-
-
-
-            int n = 5, count = 1;
-
-            for (int i = 1; i <= n; i++)
+            int count = 1;
+            for (int i = 1; i < 6; i++) // X-axis
             {
-
-                for (int j = 1; j <= i; j++)
+                for (int j = 1; j <= i; j++) // Y-axis
                 {
 
                     Console.Write(count++ + " ");
 
                 }
                 Console.WriteLine();
+
             }
 
 
         }
 
 
+        // Q8
+        static void sumEvenOdd()
+        {
+            Console.Write("How Many Numbers Did u want to enter ? ");
+            int number = int.Parse(Console.ReadLine());
 
-        class Room
+            int[] numbers = new int[number];
+            int evenSum = 0;
+            int oddSum = 0;
+
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write($"Enter Number {i + 1}: ");
+                int nums = int.Parse(Console.ReadLine());
+                numbers[i] = nums;
+
+                if (numbers[i] % 2 == 0)
+                {
+                    evenSum += numbers[i];
+                }
+                else
+                {
+                    oddSum += numbers[i];
+
+                }
+
+            }
+
+
+            Console.WriteLine($"Sum Of Even Numbers are : {evenSum}");
+            Console.WriteLine($"Sum Of Odd Numbers are : {oddSum}");
+        }
+
+        // Q9
+        static void same()
+        {
+
+            int[] nums1 = new int[4];
+            int[] nums2 = new int[4];
+
+
+            Console.WriteLine("Enter 4 Numbers on 2 Groups to print the common one");
+
+            Console.WriteLine("Enter 4 Numbers in Group 1");
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Write($"Enter Number ({i + 1}) from Group1 : ");
+                int num1 = int.Parse(Console.ReadLine());
+                nums1[i] = num1;
+            }
+
+            Console.WriteLine("Enter 4 Numbers in Group 2 : ");
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Write($"Enter Number ({i + 1}) from Group2 : ");
+                int num2 = int.Parse(Console.ReadLine());
+                nums2[i] = num2;
+            }
+
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++) // to comapre each num from array1 to all element in array2
+                {
+                    if (nums1[i] == nums2[j])
+                    {
+                        Console.WriteLine(nums1[i]);
+                        break; // Avoid printing duplicates from the same group
+                    }
+                }
+            }
+
+        }
+
+
+        class Hotel
         {
             public int RoomNumber;
             public string RoomType;
@@ -236,7 +277,7 @@ namespace Task3
         {
             // Q1 
             //Write a C# program that accepts an integer and determines if the number is even or odd. Display the result
-            oddEvenCheck();
+            //oddEvenCheck();
 
 
             // Q2
@@ -245,15 +286,18 @@ namespace Task3
 
             // Q3
             // Write a program that calculates the factorial of a given number using a for loop
-            factorial();
+            //factorial();
 
             // Q4
             // Write a program that takes two integers as input and prints all the prime numbers between them using nested loops
-            prime();
+            //prime();
+
 
             // Q5
             // Create a program that initializes an integer array and finds the largest number in it using a foreach loop.
-            largest();
+            //largest();
+
+
 
             // Q6
             // Write a program that prints the following number pattern using nested loops: For n = 5, the output should be:
@@ -264,35 +308,48 @@ namespace Task3
             //7 8 9 10
             //11 12 13 14 15
 
-            pattern();
+            //pattern();
 
 
+            // Q7
+            // Write a program that prints a pyramid pattern using stars (*) based on the input height.Use nested loops. (optional
+
+            //   *
+            //  ***
+            // *****
+            //*******
 
 
-            //bool isPrime = true;
-
-            //int x = 25;
-            //for (int i = 2; i < x; i++)
+            //Console.Write("Enter pyramid height:");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //for (int i = 1; i <= n; i++)
             //{
-            //    if (x % i == 0)
-            //    {
-            //        isPrime = false;
-            //        Console.Write(" Prime");
-            //        break;
-            //    }
-
-
-            //    if (isPrime)
-            //    {
-            //        Console.Write("Not Prime");
-            //        break;
-            //    }
-
+            //    Console.Write(new string(' ', n - i));
+            //    Console.WriteLine(new string('*', 2 * i - 1));
             //}
 
+            // Q8
+            //Write a program that takes an array of integers and calculates the sum of even numbers and odd numbers separately using loops.  (optional)
+            //sumEvenOdd();
+
+            //Q9
+            // Write a program that compares two arrays and prints their common elements using loops. (optional)
+
+            //same();
+
+            // classes
+
+            Hotel room = new Hotel();
+            room.RoomNumber = 1;
+            room.RoomType = "Single";
+            room.PricePerNight = 10;
+            room.IsBooked = true;
+            room.PrintRoomDetails();
 
 
 
-    }
+
+
+        }
     }
 }
