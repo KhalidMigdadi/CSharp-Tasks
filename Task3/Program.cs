@@ -119,6 +119,7 @@ namespace Task3
         // Q5
 
         //static void largest()
+
         //{
         //    Console.WriteLine("Enter Some Numbers to check which is the largest number: ");
         //    int Numbers = Convert.ToInt32(Console.ReadLine());
@@ -171,14 +172,40 @@ namespace Task3
             //     x = x + i +" " 
             //     console.log(x); 
             // }
-            int x = 0;
-            for (int i = 1; i < 16; i++)
+            //int x = 0;
+            //for (int i = 1; i < 16; i++)
+            //{
+            //    for (int j = 0; j < 5; j++)
+            //    {
+
+            //    }
+            //}
+
+            //Console.WriteLine("Enter Numbers:");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //for (int i = 1; i <= n; i++)
+            //{
+            //    Console.Write(new string(' ', n - i));
+            //    Console.WriteLine(new string('*', 2 * i - 1));
+            //}
+
+
+
+            int n = 5, count = 1;
+
+            for (int i = 1; i <= n; i++)
             {
-                for (int j = 0; j < 5; j++)
+
+                for (int j = 1; j <= i; j++)
                 {
 
+                    Console.Write(count++ + " ");
+
                 }
+                Console.WriteLine();
             }
+
+
         }
 
 
@@ -187,34 +214,63 @@ namespace Task3
         {
             // Q1 
             //Write a C# program that accepts an integer and determines if the number is even or odd. Display the result
-            //oddEvenCheck();
+            oddEvenCheck();
 
 
             // Q2
             // Write a C# program that accepts five numbers and displays the  2nd smallest of the five.
-            //secondSmallest();
+            secondSmallest();
 
             // Q3
             // Write a program that calculates the factorial of a given number using a for loop
-            //factorial();
+            factorial();
 
             // Q4
             // Write a program that takes two integers as input and prints all the prime numbers between them using nested loops
-            //prime();
+            prime();
 
             // Q5
             // Create a program that initializes an integer array and finds the largest number in it using a foreach loop.
-            //largest();
+            largest();
 
             // Q6
             // Write a program that prints the following number pattern using nested loops: For n = 5, the output should be:
+
             //1
             //2 3
             //4 5 6
             //7 8 9 10
             //11 12 13 14 15
 
+            pattern();
 
-        }
+
+
+
+            //bool isPrime = true;
+
+            //int x = 25;
+            //for (int i = 2; i < x; i++)
+            //{
+            //    if (x % i == 0)
+            //    {
+            //        isPrime = false;
+            //        Console.Write(" Prime");
+            //        break;
+            //    }
+
+
+            //    if (isPrime)
+            //    {
+            //        Console.Write("Not Prime");
+            //        break;
+            //    }
+
+            //}
+
+
+
+
+    }
     }
 }
