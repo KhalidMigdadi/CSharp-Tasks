@@ -11,7 +11,26 @@ namespace Task_4_21_1
     class Student
     {
         public string name { get; set; }
-        public int age { get; set; }
+        private int age;
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                if (value >= MinAge && value <= MaxAge)
+                {
+                    this.age = value;
+                }
+                else
+                {
+                    this.age = 0;
+                }
+
+            }
+        }
 
         public int studentID { get; set; }
         public string Email{ get; set; }
@@ -32,7 +51,7 @@ namespace Task_4_21_1
         public Student(string name, int age, int studentID, string Email)
         {
             this.name = name;
-            this.age = age;
+            this.Age = age;
             this.studentID = studentID;
             this.Email= Email;
         }
@@ -56,12 +75,12 @@ namespace Task_4_21_1
         {
             Student std1 = new Student();
             std1.name = "Ahmad";
-            std1.age = 22;
+            std1.Age = 9;
             std1.studentID = 1001;
 
             std1.GetDetails();
 
-            Student std2 = new Student("Khalid", 25, 1000, "kmgdadi@gmail.com");
+            Student std2 = new Student("Khalid", 9, 1000, "kmgdadi@gmail.com");
             std2.GetDetails(); // Display details of second student
 
 

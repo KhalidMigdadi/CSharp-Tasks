@@ -26,48 +26,48 @@ namespace Task3
 
         // Q2
 
-        static void secondSmallest()
-        {
+        //static void secondSmallest()
+        //{
             //Console.WriteLine("Write 5 numbers: ");
-            int userNumber = Convert.ToInt32(Console.ReadLine());
+        //    int userNumber = Convert.ToInt32(Console.ReadLine());
 
-            int[] numbers = new int[userNumber]; // Declare an array of the specified size
+        //    int[] numbers = new int[userNumber]; // Declare an array of the specified size
 
-            int small1 = int.MaxValue;
-            int small2 = int.MaxValue;
+        //    int small1 = int.MaxValue;
+        //    int small2 = int.MaxValue;
 
-            for (int i = 0; i < userNumber; i++)
-            {
-                Console.Write($"Element {i + 1}: ");
-                numbers[i] = Convert.ToInt32(Console.ReadLine()); // Read and store each element
-            }
+        //    for (int i = 0; i < userNumber; i++)
+        //    {
+        //        Console.Write($"Element {i + 1}: ");
+        //        numbers[i] = Convert.ToInt32(Console.ReadLine()); // Read and store each element
+        //    }
 
-            //string userNumber = Console.ReadLine();
-            foreach (int i in numbers)
-            {
-                if (i < small1)
-                {
-                    small2 = small1;
-                    small1 = i;
-                }
-                else if (i < small2 && i != small1)
-                {
-                    small2 = i;
-                }
+        //    //string userNumber = Console.ReadLine();
+        //    foreach (int i in numbers)
+        //    {
+        //        if (i < small1)
+        //        {
+        //            small2 = small1;
+        //            small1 = i;
+        //        }
+        //        else if (i < small2 && i != small1)
+        //        {
+        //            small2 = i;
+        //        }
 
-            }
+        //    }
 
 
-        }
+        //}
 
         // Q3
         static void factorial()
         {
-            Console.WriteLine("Enter Number");
+            Console.WriteLine("Enter Number to chek factorial");
             int userNumber = Convert.ToInt32(Console.Read());
             int factorial = 1;
 
-            for (int i = 0; i < userNumber; i++)
+            for (int i = 1; i <= userNumber; i++)
             {
                 factorial *= i;
 
@@ -210,6 +210,28 @@ namespace Task3
 
 
 
+        class Room
+        {
+            public int RoomNumber;
+            public string RoomType;
+            public double PricePerNight;
+            public bool IsBooked;
+
+            public const string HotelName = "Grand Stay Hotel";
+
+            public void PrintRoomDetails()
+            {
+                Console.WriteLine($"Hotel Name: {HotelName}");
+                Console.WriteLine($"Room Number: {RoomNumber}");
+                Console.WriteLine($"Room Type: {RoomType}");
+                Console.WriteLine($"Price Per Night: {PricePerNight:C}");
+                Console.WriteLine($"Booked: {(IsBooked ? "Yes" : "No")}");
+                Console.WriteLine();
+            }
+        }
+
+
+
         static void Main(string[] args)
         {
             // Q1 
@@ -219,7 +241,7 @@ namespace Task3
 
             // Q2
             // Write a C# program that accepts five numbers and displays the  2nd smallest of the five.
-            secondSmallest();
+            //secondSmallest();
 
             // Q3
             // Write a program that calculates the factorial of a given number using a for loop
