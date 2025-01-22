@@ -32,6 +32,21 @@ namespace Task_4_21_1
             }
         }
 
+        //private int Id;
+        //public int studentID {
+        //    get
+        //    {
+        //        return Id;
+        //    }
+        //    set
+        //    {
+        //        if (value < 1)
+        //            Id = 1;
+        //        else Id= value;
+        //    }
+        //}
+
+
         public int studentID { get; set; }
         public string Email{ get; set; }
         public const int MinAge = 18;
